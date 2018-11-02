@@ -1,3 +1,5 @@
+package People;
+
 public class Person {
     public int grade;
     public boolean pencil;
