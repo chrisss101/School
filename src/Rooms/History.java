@@ -1,10 +1,21 @@
 package Rooms;
 import People.Person;
 
+import java.util.Scanner;
+
 public class History implements Rooms.Room {
     @Override
-    public Boolean Question() {
-        return null;
+    public  void Question() {
+        Scanner Mteacher = new Scanner(System.in);
+        System.out.println("in what year was the war of 1812?");
+        String answer = Mteacher.nextLine();
+        if (answer == "1812") {
+            Person.grade += 10;
+        }
+        else {
+            Person.grade -= 10;
+        }
+
     }
 
     @Override

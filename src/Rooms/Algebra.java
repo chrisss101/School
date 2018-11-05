@@ -3,12 +3,23 @@ package Rooms;
 
 import People.Person;
 
-public class Math implements Rooms.Room  {
+import java.util.Scanner;
+
+public class Algebra implements Rooms.Room  {
 
 
     @Override
-    public Boolean Question() {
-        System.out.println("What is the square root of 100");
+    public  void Question() {
+        Scanner Mteacher = new Scanner(System.in);
+        System.out.println("What is the square root of 100?");
+        String answer = Mteacher.nextLine();
+        if (answer == "10") {
+            Person.grade += 10;
+        }
+        else {
+            Person.grade -= 10;
+        }
+
     }
 
     @Override

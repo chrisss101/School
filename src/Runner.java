@@ -1,32 +1,64 @@
 import People.Person;
+import Rooms.History;
+import Rooms.Algebra;
+import Rooms.Science;
+import Rooms.English;
+
+import java.util.Scanner;
 
 public class Runner {
-    public Person Student = new Person(false,false,80,"hallway");
+
     public static void turnLeft() {
-        int decision = booleanToInt((Math.random() * 1 + 2));
-        if (decision == 1) {
-             changeRoom("Math");
+        int decision = (int)((Math.random() * 1 + 2));
+        if (decision == 3) {
+            History.Question();
+
         }
          else if (decision == 2) {
-             changeRoom("English");
+            Algebra.Question();
         }
     }
      public static void turnRight() {
-        int decision = (Math.random() * 1 + 2);
-        if (decision == 1) {
-            changeRoom("History");
+        int decision = (int)((Math.random() * 1 + 2));
+
+         if (decision == 3) {
+             Person.room = "Science";
         }
          else if (decision == 2) {
-             changeRoom("Science");
+             Person.room = "English";
         }
     }
-    public static int booleanToInt(boolean value) {
-        // Convert true to 1 and false to 0.
-        return value ? 1 : 0;
+     /*/public  void detectRoom() {
+        if (Person.room == "Algebra") {
+            Algebra.Question();
+        }
+        if (Person.room == "History") {
+            History.Question();
+        }
+        if (Person.room == "English") {
+            English.Question();
+        }
+        if (Person.room == "Science") {
+            Science.Question();
+        }
+    }/*/
+    public static void main(String[] args) {
+        School theSchool = new School();
+        Person student = new Person(false,false,80);
+        Scanner ask = new Scanner(System.in);
+        System.out.println("What is your name?");
+        String name = ask.nextLine();
+        System.out.println("Hello " + name);
+        System.out.println("Do you want to go left or right?");
+        String choice = ask.nextLine();
+        if (choice == "left") {
+            turnLeft();
+        }
+        else {
+            turnRight();
+        }
     }
-    Scanner ask = new Scanner(System.in); 
-    System.out.println("What is your name?");
-    String name = ask.nextLine();
-    System.out.println("Heallo " + name);
+
+
 
 }
