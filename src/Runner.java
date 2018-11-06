@@ -22,10 +22,10 @@ public class Runner {
         int decision = (int)((Math.random() * 1 + 2));
 
          if (decision == 3) {
-             Person.room = "Science";
+             Science.Question();
         }
          else if (decision == 2) {
-             Person.room = "English";
+             English.Question();
         }
     }
      /*/public  void detectRoom() {
@@ -51,6 +51,24 @@ public class Runner {
         System.out.println("Hello " + name);
         System.out.println("Do you want to go left or right?");
         String choice = ask.nextLine();
+        if (choice == "left") {
+            turnLeft();
+        }
+        else {
+            turnRight();
+        }
+         System.out.println("Do you want to go left or right?");
+        choice = ask.nextLine();
+        if (choice == "left") {
+            System.out.println("hey you found your pencil in the door to the room");
+            Person.getPencil();
+            turnLeft();
+        }
+        else {
+            turnRight();
+        }
+         System.out.println("Do you want to go left or right?");
+         choice = ask.nextLine();
         if (choice == "left") {
             turnLeft();
         }
