@@ -12,6 +12,11 @@ public class Runner {
     public  void main(String[] args) {
         School theSchool = new School();
         Person student = new Person(false,false,80);
+        Algebra alg = new Algebra();
+        History his = new History();
+        Science sci = new Science();
+        English ing = new English();
+        startGame();
 
     }
 
@@ -37,13 +42,13 @@ public class Runner {
      public  void turnLeft() {
          int decision = (int)((Math.random() * 1 + 2));
          if (decision == 3) {
-             Person.room = "Algebra";
+             Person.changeRoom(new Room[]);
              detectRoom();
 
 
          }
          else if (decision == 2) {
-             Person.room = "History";
+             Person.changeRoom = "History";
              detectRoom();
          }
      }
@@ -51,11 +56,11 @@ public class Runner {
         int decision = (int)((Math.random() * 1 + 2));
 
         if (decision == 3) {
-            Person.room = "English";
+            Person.changeRoom = "English";
             detectRoom();
         }
         else if (decision == 2) {
-            Person.room = "Science";
+            Person.changeRoom = "Science";
             detectRoom();
         }
     }

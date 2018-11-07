@@ -1,13 +1,15 @@
 package People;
 
+import Rooms.Room;
+
 public class Person {
     public static int grade;
-    public static boolean pencil;
-    public static boolean calculator;
-    public static String room;
+    private static boolean pencil;
+    private static boolean calculator;
+    public static Room room;
 
-    public void changeRoom(String room) {
-        this.room = room;
+    public static void changeRoom(Room room) {
+        room = room;
     }
     public static void getCalc(boolean calc) {
         calculator = calc;
