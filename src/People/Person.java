@@ -2,18 +2,18 @@ package People;
 
 public class Person {
     public static int grade;
-    public boolean pencil;
-    public boolean calculator;
+    public static boolean pencil;
+    public static boolean calculator;
     public static String room;
 
     public void changeRoom(String room) {
         this.room = room;
     }
-    public void getCalc(boolean calc) {
-        this.calculator = calc;
+    public static void getCalc(boolean calc) {
+        calculator = calc;
     }
-    public void getPencil(boolean pencil) {
-        this.pencil = pencil;
+    public static void getPencil(boolean pencil) {
+        pencil = pencil;
     }
     public void changeGrade(int improv) {
         this.grade += improv;

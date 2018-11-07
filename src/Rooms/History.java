@@ -11,15 +11,19 @@ public class History implements Rooms.Room {
         String answer = Mteacher.nextLine();
         if (answer == "1812") {
             Person.grade += 10;
+            System.out.println("Correct, your grade increased by 10 points");
         }
         else {
             Person.grade -= 10;
+            System.out.println("Wrong, your grade decreased by 10 points");
         }
+        System.out.println("hey you found your calculator");
+        Person.getCalc(true);
 
     }
 
     @Override
-    public void checkPencil(Person P) {
+    public  void checkPencil(Person P) {
         if (P.pencil == true) {
             P.grade += 10;
             System.out.println("You have your pencil");
@@ -33,5 +37,8 @@ public class History implements Rooms.Room {
     @Override
     public void checkCalculator(Person P) {
 
+    }
+    public  void runHistory() {
+        this.Question();
     }
 }

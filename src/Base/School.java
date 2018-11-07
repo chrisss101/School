@@ -1,3 +1,5 @@
+package Base;
+
 import Rooms.*;
 
 public class School {
