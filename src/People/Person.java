@@ -4,8 +4,8 @@ import Rooms.Room;
 
 public class Person {
     public static int grade;
-    private static boolean pencil;
-    private static boolean calculator;
+    public static boolean pencil;
+    public static boolean calculator;
     public static Room room;
 
     public static void changeRoom(Room room) {

@@ -4,7 +4,7 @@ import Rooms.*;
 
 public class School {
 
-    Room[] theRooms = new Room[4];
+    public Room[] theRooms = new Room[4];
    public School() {
        theRooms[0] = new Algebra();
        theRooms[1] = new History();
