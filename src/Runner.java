@@ -40,7 +40,7 @@ public class Runner {
         }
     }
      public  static void turnLeft(Person student, School theSchool,English ing,Science sci,History his,Algebra alg) {
-         int decision = (int)((Math.random() * 1 + 2));
+         int decision = (int)(Math.random() * (3 - 2)) + 2;
          if (decision == 3) {
 
              student.changeRoom(theSchool.theRooms[0]);
@@ -54,14 +54,14 @@ public class Runner {
          }
      }
     public  static void turnRight(Person student, School theSchool,English ing,Science sci,History his,Algebra alg) {
-        int decision = (int)((Math.random() * 1 + 2));
+        int decision = (int)(Math.random() * (3 - 2)) + 2;
 
         if (decision == 3) {
             student.changeRoom(theSchool.theRooms[3]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
         else if (decision == 2) {
-            student.changeRoom(theSchool.theRooms[4]);
+            student.changeRoom(theSchool.theRooms[2]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
     }
