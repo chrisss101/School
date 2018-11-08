@@ -8,7 +8,7 @@ public class School {
    public School() {
        theRooms[0] = new Algebra();
        theRooms[1] = new History();
-       theRooms[3] = new Science();
-       theRooms[4] = new English();
+       theRooms[2] = new Science();
+       theRooms[3] = new English();
    }
 }

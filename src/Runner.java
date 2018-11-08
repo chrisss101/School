@@ -9,7 +9,7 @@ import Base.School;
 import java.util.Scanner;
 
 public class Runner {
-    public  void main(String[] args) {
+    public  static void main(String[] args) {
         School theSchool = new School();
         Person student = new Person(false,false,80);
         Algebra alg = new Algebra();
@@ -20,7 +20,7 @@ public class Runner {
 
     }
 
-     public void detectRoom(School theSchool,Person theStudent,English ing,Science sci,History his,Algebra alg) {
+     public static void detectRoom(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg) {
         if (theStudent.room == theSchool.theRooms[0]) {
             alg.Question();
             alg.checkCalculator(theStudent);
@@ -30,43 +30,43 @@ public class Runner {
             his.Question();
             his.checkPencil(theStudent);
         }
-        else if (theStudent.room == theSchool.theRooms[4]) {
+        else if (theStudent.room == theSchool.theRooms[3]) {
             ing.Question();
             ing.checkPencil(theStudent);
         }
-       else  if (theStudent.room == theSchool.theRooms[3]) {
+       else  if (theStudent.room == theSchool.theRooms[2]) {
             sci.Question();
             sci.checkCalculator(theStudent);
         }
     }
-     public  void turnLeft(School theSchool,Person student,English ing,Science sci,History his,Algebra alg) {
+     public  static void turnLeft(Person student, School theSchool,English ing,Science sci,History his,Algebra alg) {
          int decision = (int)((Math.random() * 1 + 2));
          if (decision == 3) {
 
              student.changeRoom(theSchool.theRooms[0]);
-             detectRoom(theSchool,student,ing,sci,his,alg);
+             detectRoom(student,theSchool,ing,sci,his,alg);
 
 
          }
          else if (decision == 2) {
              student.changeRoom(theSchool.theRooms[1]);
-             detectRoom(theSchool,student,ing,sci,his,alg);
+             detectRoom(student,theSchool,ing,sci,his,alg);
          }
      }
-    public  void turnRight(School theSchool,Person student,English ing,Science sci,History his,Algebra alg) {
+    public  static void turnRight(Person student, School theSchool,English ing,Science sci,History his,Algebra alg) {
         int decision = (int)((Math.random() * 1 + 2));
 
         if (decision == 3) {
             student.changeRoom(theSchool.theRooms[3]);
-            detectRoom(theSchool,student,ing,sci,his,alg);
+            detectRoom(student,theSchool,ing,sci,his,alg);
         }
         else if (decision == 2) {
             student.changeRoom(theSchool.theRooms[4]);
-            detectRoom(theSchool,student,ing,sci,his,alg);
+            detectRoom(student,theSchool,ing,sci,his,alg);
         }
     }
 
-    public  void startGame(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg){
+    public  static void startGame(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg){
         Scanner ask = new Scanner(System.in);
         System.out.println("What is your name?");
         String name = ask.nextLine();
@@ -74,28 +74,28 @@ public class Runner {
         System.out.println("Do you want to go left or right?");
         String choice = ask.nextLine();
         if (choice == "left") {
-            turnLeft(theSchool,theStudent, ing,sci,his, alg);
+            turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
-            turnRight(theSchool,theStudent,ing, sci,his, alg);
+            turnRight(theStudent,theSchool,ing, sci,his, alg);
         }
         System.out.println("Do you want to go left or right?");
         choice = ask.nextLine();
         if (choice == "left") {
             System.out.println("hey you found your pencil in the door to the room");
             Person.getPencil(true);
-            turnLeft(theSchool,theStudent,ing, sci,his, alg);
+            turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
-            turnRight(theSchool,theStudent,ing, sci,his, alg);
+            turnRight(theStudent,theSchool,ing, sci,his, alg);
         }
         System.out.println("Do you want to go left or right?");
         choice = ask.nextLine();
         if (choice == "left") {
-            turnLeft(theSchool,theStudent,ing, sci,his, alg);
+            turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
-            turnRight(theSchool,theStudent,ing, sci,his, alg);
+            turnRight(theStudent,theSchool,ing, sci,his, alg);
         }
     }
 
