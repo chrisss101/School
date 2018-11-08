@@ -43,13 +43,13 @@ public class Runner {
          int decision = (int)(Math.random() * (3 - 2)) + 2;
          if (decision == 3) {
 
-             student.changeRoom(theSchool.theRooms[0]);
+             Person.changeRoom(theSchool.theRooms[0]);
              detectRoom(student,theSchool,ing,sci,his,alg);
 
 
          }
          else if (decision == 2) {
-             student.changeRoom(theSchool.theRooms[1]);
+             Person.changeRoom(theSchool.theRooms[1]);
              detectRoom(student,theSchool,ing,sci,his,alg);
          }
      }
@@ -57,11 +57,11 @@ public class Runner {
         int decision = (int)(Math.random() * (3 - 2)) + 2;
 
         if (decision == 3) {
-            student.changeRoom(theSchool.theRooms[3]);
+            Person.changeRoom(theSchool.theRooms[3]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
         else if (decision == 2) {
-            student.changeRoom(theSchool.theRooms[2]);
+            Person.changeRoom(theSchool.theRooms[2]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
     }
@@ -73,7 +73,7 @@ public class Runner {
         System.out.println("Hello " + name);
         System.out.println("Do you want to go left or right?");
         String choice = ask.nextLine();
-        if (choice == "left") {
+        if (choice.equals("left")) {
             turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
@@ -81,7 +81,7 @@ public class Runner {
         }
         System.out.println("Do you want to go left or right?");
         choice = ask.nextLine();
-        if (choice == "left") {
+        if (choice.equals("left")) {
             System.out.println("hey you found your pencil in the door to the room");
             Person.getPencil(true);
             turnLeft(theStudent,theSchool, ing,sci,his, alg);
@@ -91,7 +91,7 @@ public class Runner {
         }
         System.out.println("Do you want to go left or right?");
         choice = ask.nextLine();
-        if (choice == "left") {
+        if (choice.equals("left")) {
             turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
