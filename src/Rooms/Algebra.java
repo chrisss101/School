@@ -13,6 +13,7 @@ public class Algebra implements Rooms.Room  {
     @Override
     public void Question(Person P) {
         Scanner Lteacher = new Scanner(System.in);
+        System.out.println("You walked into the Math room");
         System.out.println("What is the square root of 100?");
         String answer = Lteacher.nextLine();
         if (answer.equals("10")) {
@@ -35,7 +36,7 @@ public class Algebra implements Rooms.Room  {
         }
         else {
             P.grade -= 10;
-            System.out.println("You seem to have lost your pencil");
+            System.out.println("You seem to have lost your pencil this decreased your grade by 10 points");
         }
     }
 

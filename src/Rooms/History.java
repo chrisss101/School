@@ -7,6 +7,7 @@ public class History implements Rooms.Room {
     @Override
     public  void Question(Person P) {
         Scanner Mteacher = new Scanner(System.in);
+        System.out.println("History");
         System.out.println("in what year was the war of 1812?");
         String answer = Mteacher.nextLine();
         if (answer.equals("1812")) {
@@ -30,7 +31,7 @@ public class History implements Rooms.Room {
         }
         else {
             P.grade -= 10;
-            System.out.println("You seem to have lost your pencil");
+            System.out.println("You seem to have lost your pencil this decreased your grade by 10 points");
         }
     }
 

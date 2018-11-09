@@ -21,7 +21,7 @@ public class Runner {
     }
 
      public static void detectRoom(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg) {
-        theStudent.room.Question(theStudent);
+        //theStudent.room.Question(theStudent);
         if (theStudent.room == theSchool.theRooms[0]) {
             alg.Question(theStudent);
             alg.checkCalculator(theStudent);
@@ -98,7 +98,7 @@ public class Runner {
         else {
             turnRight(theStudent,theSchool,ing, sci,his, alg);
         }
-        System.out.println(theStudent.grade);
+        System.out.println("Your grade is " + theStudent.grade);
     }
 
 

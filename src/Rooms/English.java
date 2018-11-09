@@ -8,6 +8,7 @@ public class English implements Room{
     @Override
     public  void Question(Person P) {
         Scanner Mteacher = new Scanner(System.in);
+        System.out.println("You walked into the English room");
         System.out.println("How many syllables does Valentine have?");
         String answer = Mteacher.nextLine();
         if (answer.equals("3")) {
@@ -28,7 +29,7 @@ public class English implements Room{
         }
         else {
             P.grade -= 10;
-            System.out.println("You seem to have lost your pencil");
+            System.out.println("You seem to have lost your pencil, this decreased your grade by 10 points");
         }
     }
 
