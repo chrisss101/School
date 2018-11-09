@@ -3,18 +3,18 @@ package People;
 import Rooms.Room;
 
 public class Person {
-    public static int grade;
-    public static boolean pencil;
-    public static boolean calculator;
-    public static Room room;
+    public  int grade;
+    public  boolean pencil;
+    public  boolean calculator;
+    public  Room room;
 
-    public static void changeRoom(Room room) {
-        room = room;
+    public void changeRoom(Room room) {
+        this.room = room;
     }
-    public static void getCalc(boolean calc) {
+    public  void getCalc(boolean calc) {
         calculator = calc;
     }
-    public static void getPencil(boolean pencil) {
+    public  void getPencil(boolean pencil) {
         pencil = pencil;
     }
     public void changeGrade(int improv) {

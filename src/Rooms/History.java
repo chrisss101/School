@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class History implements Rooms.Room {
     @Override
-    public  void Question() {
+    public  void Question(Person P) {
         Scanner Mteacher = new Scanner(System.in);
         System.out.println("in what year was the war of 1812?");
         String answer = Mteacher.nextLine();
-        if (answer == "1812") {
-            Person.grade += 10;
+        if (answer.equals("1812")) {
+            P.grade += 10;
             System.out.println("Correct, your grade increased by 10 points");
         }
         else {
-            Person.grade -= 10;
+            P.grade -= 10;
             System.out.println("Wrong, your grade decreased by 10 points");
         }
         System.out.println("hey you found your calculator");
-        Person.getCalc(true);
+        P.getCalc(true);
 
     }
 
@@ -38,7 +38,5 @@ public class History implements Rooms.Room {
     public void checkCalculator(Person P) {
 
     }
-    public  void runHistory() {
-        this.Question();
-    }
+
 }

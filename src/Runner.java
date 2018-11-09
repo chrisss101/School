@@ -21,21 +21,22 @@ public class Runner {
     }
 
      public static void detectRoom(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg) {
+        theStudent.room.Question(theStudent);
         if (theStudent.room == theSchool.theRooms[0]) {
-            alg.Question();
+            alg.Question(theStudent);
             alg.checkCalculator(theStudent);
             alg.checkPencil(theStudent);
         }
        else if (theStudent.room == theSchool.theRooms[1]) {
-            his.Question();
+            his.Question(theStudent);
             his.checkPencil(theStudent);
         }
         else if (theStudent.room == theSchool.theRooms[3]) {
-            ing.Question();
+            ing.Question(theStudent);
             ing.checkPencil(theStudent);
         }
        else  if (theStudent.room == theSchool.theRooms[2]) {
-            sci.Question();
+            sci.Question(theStudent);
             sci.checkCalculator(theStudent);
         }
     }
@@ -43,13 +44,13 @@ public class Runner {
          int decision = (int)(Math.random() * (3 - 2)) + 2;
          if (decision == 3) {
 
-             Person.changeRoom(theSchool.theRooms[0]);
+             student.changeRoom(theSchool.theRooms[0]);
              detectRoom(student,theSchool,ing,sci,his,alg);
 
 
          }
          else if (decision == 2) {
-             Person.changeRoom(theSchool.theRooms[1]);
+             student.changeRoom(theSchool.theRooms[1]);
              detectRoom(student,theSchool,ing,sci,his,alg);
          }
      }
@@ -57,16 +58,16 @@ public class Runner {
         int decision = (int)(Math.random() * (3 - 2)) + 2;
 
         if (decision == 3) {
-            Person.changeRoom(theSchool.theRooms[3]);
+            student.changeRoom(theSchool.theRooms[3]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
         else if (decision == 2) {
-            Person.changeRoom(theSchool.theRooms[2]);
+            student.changeRoom(theSchool.theRooms[2]);
             detectRoom(student,theSchool,ing,sci,his,alg);
         }
     }
 
-    public  static void startGame(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg){
+    public   static void startGame(Person theStudent,School theSchool,English ing,Science sci,History his,Algebra alg){
         Scanner ask = new Scanner(System.in);
         System.out.println("What is your name?");
         String name = ask.nextLine();
@@ -83,7 +84,7 @@ public class Runner {
         choice = ask.nextLine();
         if (choice.equals("left")) {
             System.out.println("hey you found your pencil in the door to the room");
-            Person.getPencil(true);
+            theStudent.getPencil(true);
             turnLeft(theStudent,theSchool, ing,sci,his, alg);
         }
         else {
@@ -97,6 +98,7 @@ public class Runner {
         else {
             turnRight(theStudent,theSchool,ing, sci,his, alg);
         }
+        System.out.println(theStudent.grade);
     }
 
 

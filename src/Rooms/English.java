@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class English implements Room{
     @Override
-    public  void Question() {
+    public  void Question(Person P) {
         Scanner Mteacher = new Scanner(System.in);
         System.out.println("How many syllables does Valentine have?");
         String answer = Mteacher.nextLine();
-        if (answer == "3") {
-            Person.grade += 10;
+        if (answer.equals("3")) {
+            P.grade += 10;
             System.out.println("Correct, your grade increased by 10 points");
         }
         else {
-            Person.grade -= 10;
+            P.grade -= 10;
             System.out.println("Wrong, your grade decreased by 10 points");
         }
     }

@@ -11,17 +11,17 @@ public class Algebra implements Rooms.Room  {
 
 
     @Override
-    public void Question() {
+    public void Question(Person P) {
         Scanner Lteacher = new Scanner(System.in);
         System.out.println("What is the square root of 100?");
         String answer = Lteacher.nextLine();
-        if (answer == "10") {
-            Person.grade += 10;
+        if (answer.equals("10")) {
+            P.grade += 10;
             System.out.println("Correct, your grade increased by 10 points");
 
         }
         else {
-            Person.grade -= 10;
+            P.grade -= 10;
             System.out.println("Wrong, your grade decreased by 10 points");
         }
 
